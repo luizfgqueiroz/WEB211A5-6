@@ -13,7 +13,6 @@
           <a href="index.html" class="logo">
             <img src="images/logo.png" alt="luiz-store-logo"/>
           </a>
-          Luiz's Store
         </h1>
         <h3>Selling all kinds of Headphones since 2020.</h3>
       </div>
@@ -88,15 +87,15 @@
                 type="radio"
                 name="message"
                 value="Question"
-                onclick="displayOrderNum2()"
+                onclick="hideOrderNum()"
               />Question
               <input
                 type="radio"
                 name="message"
                 value="Comment"
-                onclick="displayOrderNum2()"
+                onclick="hideOrderNum()"
               />Comment
-              <input type="radio" name="message" value="OrderP" onclick="displayOrderNum()" />Order
+              <input type="radio" name="message" value="OrderP" onclick="showOrderNum()" />Order
               Problem
             </p>
             <p id="orderNum" style="display:none">
@@ -107,7 +106,7 @@
               <textarea name="message_text" cols="40" rows="5"></textarea>
             </p>
             <p>
-              <input type="hidden" name="name" value="Ji Hyeon You" />
+              <input type="hidden" name="name" value="Luiz Felipe Gomes de Queiroz"/>
             </p>
             <p>
               <input type="submit" value="submit" />
@@ -119,7 +118,7 @@
       <div class="footer">
         <div class="subscribe">
           <form action="https://formspree.io/xlewkwag" method="POST">
-            Do you want to subscribe to our Newsletter? Enter your email:
+            Enter your email:
             <input type="email" name="_replyto" />
             <input type="submit" value="Subscribe"/>
           </form>
