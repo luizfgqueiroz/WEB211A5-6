@@ -1,50 +1,127 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8" />
-    <title>Luiz's Store - Selling goods since 2020</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Luiz's Store - Selling Headphones since 2020</title>
     <link rel="stylesheet" href="style.css"/>
+    <script src="script.js"></script>
   </head>
   <body>
-    <div class="style" id="TopMenuBar">
-      <nav>
-        <a class="index" href="index.html">Luiz's Store</a>
-        <a class="contact" href="contact.html">Contact</a>
-      </nav>
+    <header>
+      <div class="header">
+        <h1>
+          Luiz's Store
+        </h1>
+        <h3>Selling all kinds of Headphones since 2020.</h3>
+      </div>
+    </header>
+    <nav>
+      <div class="nav">
+        <ul>
+          <li><a class="index" href="index.html">Luiz's Store</a></li>
+          <li><a class="contact" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container-contact">
+        <h2>Contact Us</h2>
+        <div class="userinfo">
+          <form action="https://httpbin.org/post" method="post">
+            <p>
+              <label for="fname">First Name: </label>
+              <input id="fname" type="text" name="fname" />
+            </p>
+            <p>
+              <label for="lname">Last Name: </label>
+              <input id="lname" type="text" name="lname" />
+            </p>
+            <p>
+              <label for="email">Email: </label>
+              <input id="email" type="email" name="email" />
+            </p>
+            <p>
+              <label for="address">Address: </label>
+              <input id="address" type="text" name="address" />
+            </p>
+            <p>
+              <label for="city">City: </label>
+              <input id="city" type="text" list="cities" name="city" autocomplete="on"/>
+              <datalist id="cities">
+                <option value="Brampton"></option>
+                <option value="Burlington"></option>
+                <option value="Guelph"></option>
+                <option value="Hamilton"></option>
+                <option value="Mississauga"></option>
+                <option value="Ottawa"></option>
+                <option value="Toronto"></option>
+                <option value="Vaughan"></option>
+              </datalist>
+            </p>
+            <p>
+              <label for="phonenum">Phone Number: </label>
+              <input
+                id="phonenum"
+                type="tel"
+                name="phonenum"
+                placeholder="000-000-0000"
+                required
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              />
+            </p>
+            <p>
+              <label for="postalcode">Postal Code: </label>
+              <input
+                id="postalcode"
+                type="text"
+                name="postalcode"
+                placeholder="A0A 0A0"
+                required
+                pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
+              />
+            </p>
+            <p>Would you like to be phoned? <input type="checkbox" name="bephoned"/>Yes</p>
+            <p>
+              <input
+                type="radio"
+                name="message"
+                value="Question"
+                onclick="displayOrderNum2()"
+              />Question
+              <input
+                type="radio"
+                name="message"
+                value="Comment"
+                onclick="displayOrderNum2()"
+              />Comment
+              <input type="radio" name="message" value="OrderP" onclick="displayOrderNum()" />Order
+              Problem
+            </p>
+            <p id="orderNum" style="display:none">
+              Order Number:
+              <input type="text" name="orderNum" />
+            </p>
+            <p>
+              <textarea name="message_text" cols="40" rows="5"></textarea>
+            </p>
+            <p>
+              <input type="hidden" name="name" value="Ji Hyeon You" />
+            </p>
+            <p>
+              <input type="submit" value="submit" />
+            </p>
+          </form>
+        </div>
     </div>
-    <!--    
-
-    Part 2: Contact Us Page
-
-    Requirements:
-
-    1. Use the same header/footer, colours, fonts, etc. as your index.html page.
-    It should be obvious to the user they they are still on the same site, and that
-    contact.html is part of your store.
-
-    2. Include an HTML Form for the user to fill out his or her information along
-    with their message to you. Your form should including the following, and all
-    fields should be mandatory unless otherwise noted, and use the most appropriate <input> type:
-    
-        - First Name
-        - Last Name
-        - Email Address
-        - Address
-        - City (use a <datalist> for autocomplete of common Canadian cities)
-        - Phone Number (must be a valid Canadian Phone Number, use regex)
-        - Postal Code (must be a valid Canadian Postal Code, use regex)
-        - Checkbox Option to be phoned ("Would you like to be phoned?")
-        - Radio Options to specify what this is about: one of "Question",
-          "Comment", or "Order Problem". If the user selects "Order Problem",
-          dynamically reveal another input box to enter the order number. In the
-          case of "Comment" or "Question" hide this input box.
-        - A large area to enter the message that they want to send
-        - A hidden input field with your name
-
-    3. The form should submit to https://httpbin.org/post using the POST method,
-    and only allow the user to submit when all data has been entered and there
-    aren't any validation errors.  The data posted to httpbin.org should include
-    all data defined in the form above (e.g., visible and hidden fields).
-
-  --></body>
+    <footer>
+      <div class="footer">
+        <div class="subscribe">
+          <form action="https://formspree.io/xlewkwag" method="POST">
+            Do you want to subscribe to our Newsletter? Enter your email:
+            <input type="email" name="_replyto" />
+            <input type="submit" value="Subscribe"/>
+          </form>
+        </div>
+      </div>
+      </footer>
+  </body>
 </html>
